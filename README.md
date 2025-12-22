@@ -1,7 +1,5 @@
 "# sign-up-automation" 
 
-"# sign-up-automation" 
-
 Tech Stack
 
 -JavaScript
