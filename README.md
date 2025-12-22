@@ -1,33 +1,65 @@
 "# sign-up-automation" 
 
+"# sign-up-automation" 
+
 Tech Stack
-JavaScript – Main programming language used for writing tests
-Playwright – Automates browser interactions and testing
-Node.js – Runtime environment to execute the tests
-JSON – Stores test data in a simple and reusable format
-Mailosaur – Handles OTP emails during automated signup tests
+
+-JavaScript
+-Playwright
+-Node.js
+-JSON (test data)
+-Mailosaur (OTP email handling)
 
 Features
-Automatically fills out signup forms
-Reads and verifies OTP from email
-Uploads required files
-Validates successful form submission
-Confirms the correct URL after signup completion
+-Automated signup form filling
+-OTP verification via email
+-Multi-step form submission
+-File upload validation
+-Final URL verification after signup
 
-Setup Instructions
+Project Structure
+sign-up-automation/
+├── tests/
+├── test-data/
+├── images/
+├── playwright.config.js
+├── .env
+└── README.md
 
-Clone the repository:
+Environment Setup
+Create a .env file in the root folder:
+
+API_Key=your_mailosaur_api_key
+Server_ID=your_mailosaur_server_id
+BASE_URL=your_application_url
+
+Installation
+Clone the repo:
 git clone https://github.com/contact-sulav/sign-up-automation.git
 
 
-Install the required dependencies:
+Install dependencies:
 npm install
 
-Run the tests:
+Install Playwright browsers:
 
-With browser UI:
+npx playwright install
+
+Run Tests
+
+Run with browser:
 npx playwright test --headed
 
 
-Using Playwright Test UI:
+Run using Playwright UI:
 npx playwright test --ui
+
+Test Flow
+-Open application
+-Fill signup form
+-Receive OTP from email
+-Verify OTP
+-Fill agency & business details
+-Upload required file
+-Submit form
+-Verify successful signup URL
