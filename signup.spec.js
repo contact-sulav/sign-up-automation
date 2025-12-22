@@ -3,9 +3,9 @@ import data from "../test-data/signup.json";
 import path from 'path';
 const filePath = path.resolve('images/images.jpg');
 import MailosaurClient from 'mailosaur';
-const mailosaur = new MailosaurClient('PtFXZrJwmDkv007m743c0zSizvfQe5E3');
-const serverId = 'tkf8ta9m';
-
+const mailosaur = new MailosaurClient(process.env.API_Key);
+const serverId = process.env.Server_ID;
+const baseurl = process.env.BASE_URL;
 
 test.describe('Signup Automation', () => {
     test.setTimeout(120000);
@@ -13,8 +13,8 @@ test.describe('Signup Automation', () => {
     test('Sign up', async ({ page }) => {
 
         const testEmail = `user-${Date.now()}@${serverId}.mailosaur.net`;
-        console.log(testEmail);
-        await page.goto('https://authorized-partner.vercel.app/');
+    //    navigate to website
+        await page.goto(process.env.BASE_URL);
         await expect(page.locator('(//img[@alt="logo"])[1]')).toBeVisible();
         await page.locator('(//button)[1]').click();
         await expect(page.locator('//h3')).toContainText('Register Your Agency');
@@ -75,7 +75,7 @@ test.describe('Signup Automation', () => {
         await page.locator('input[type="file"]').first().setInputFiles(filePath);
         await page.click('button[type="submit"]');
 
-        await expect(page).toHaveURL('https://authorized-partner.vercel.app/admin/profile', {
+        await expect(page).toHaveURL(`${process.env.BASE_URL}admin/profile`, {
             timeout: 18000,
         });
 
