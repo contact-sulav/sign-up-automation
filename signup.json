@@ -1,0 +1,17 @@
+{
+    "firstName": "Sulav",
+    "lastName": "Chaudhary",
+    "phonenumber": "9848256978",
+    "password": "Skill@123",
+    "confirmPassword": "Skill@123",
+    "agencyName": "abc",
+    "roleInAgency": "admin",
+    "emailAddress": "abc@gmail.com",
+    "website": "xyz.com",
+    "Address": "kathmandu",
+    "numberOfStudents": "2000",
+    "focusArea": "Australia",
+    "successMetrics": "90",
+    "busRegNumber": "65465646565",
+    "certDetails": " bachelor"
+}
